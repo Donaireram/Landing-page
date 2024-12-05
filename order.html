@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #fdfdfd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .product-card {
+            background-color: #ece3d1;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #333;
+        }
+
+        .product-card img {
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 18px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-controls input {
+            width: 50px;
+            text-align: center;
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .quantity-controls button {
+            font-size: 20px;
+            padding: 5px 10px;
+            border: none;
+            background-color: #0077cc;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .quantity-controls button:hover {
+            background-color: #005fa3;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #0077cc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .add-to-cart:hover {
+            background-color: #005fa3;
+
+        }
+        .button1 {
+             text-decoration: none;
+        }
+        .button1 button{
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        .button1 button:hover{
+            background-color: #005fa3;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <h2>Order Online</h2>
+        <!-- <p>Water Monitoring</p> -->
+        <img src="product.jpeg">
+        <div class="product-title">Water monitoring</div>
+        <div class="product-price">₱6000</div>
+        <div class="quantity-controls">
+            <button onclick="updateQuantity(-1)">-</button>
+            <input type="number" id="quantity" value="1" min="1">
+            <button onclick="updateQuantity(1)">+</button>
+        </div>
+        <div>
+            <a href="Placeorder.html">
+             <button class="add-to-cart">Add to Cart</button>
+        </a>
+        </div>
+
+        <br>
+       
+        <div class="button1">
+            <a href="home.html">
+              <button>
+                  Back
+              </button>
+            </a>
+        </div>
+
+            
+    </div>
+
+    <script>
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById('quantity');
+            const currentQuantity = parseInt(quantityInput.value, 10);
+            const newQuantity = currentQuantity + change;
+            if (newQuantity >= 1) {
+                quantityInput.value = newQuantity;
+            }
+        }
+    </script>
+</body>
+</html>
